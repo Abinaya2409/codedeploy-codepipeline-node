@@ -2,4 +2,3 @@
 # update yum just in case
 yum update -y
 
-sudo npm install

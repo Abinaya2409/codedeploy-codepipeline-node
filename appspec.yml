@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/
+  - source: src/
+    destination: /var/www/node-npm-test
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
@@ -13,6 +13,10 @@ hooks:
       timeout: 300
   ApplicationStop:
     - location: scripts/stop_server.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/package_install.sh
       timeout: 300
       runas: root
   ValidateService:
