@@ -1,4 +1,4 @@
-const port = process.env.PORT || 80
+const port = process.env.PORT || 8000
 require('http')
   .createServer((req, res) => {
     console.log(`incoming url: ${req.url} and incoming method: ${req.method}`)
